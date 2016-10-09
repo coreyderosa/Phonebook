@@ -7,14 +7,14 @@
 #Python Course:   Items 49-51
 
 from tkinter import *
-from tkinter import ttk
+import tkinter as tk
 
 #Importing my other modules needed to run the phone book
-#import phonebook_gui
-#import phonebook_func
+import phonebook_gui
+import phonebook_func
 
 #Setting up the class
-class ParentWIndow(Frame):
+class ParentWindow(Frame):
     def __init__(self, master, *args, **kwargs):
         Frame.__init__(self, master, *args, **kwargs)
 
@@ -23,8 +23,8 @@ class ParentWIndow(Frame):
         self.master.minsize(500, 300) #height, width
         self.master.maxsize(500, 300)
         phonebook_func.center_window(self, 500, 300) #center_window will center the GUI window in the center of the screen
-        self.master.titile('The Tkinter Phonebook')
-        self.master.configure(bg='F0F0F0') #bg = background
+        self.master.title('The Tkinter Phonebook')
+        self.master.configure(bg='white') #bg = background
         #WM_DELETE_WINDOW is 'X' in upper corner of window that closes window
         self.master.protocol('WM_DELETE_WINDOW', lambda: phonebook_func.ask_quit(self))
         arg = self.master
@@ -32,7 +32,7 @@ class ParentWIndow(Frame):
 
 
 if __name__== '__main__':
-    root = Tk()
+    root = tk.Tk()
     App = ParentWindow(root)
     root.mainloop()
         
